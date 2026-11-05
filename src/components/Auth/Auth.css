@@ -1,0 +1,143 @@
+.authWrapper {
+  width: 450px;
+  height: 700px;
+  border: 2px solid #27272a;
+  border-radius: 20px;
+  background-color: #151518;
+  padding: 20px 50px 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.authWrapper__title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.authWrapper__title h1 {
+  color: #F97316;
+  font-size: 50px;
+}
+.authWrapper__loginTitle {
+  color: white;
+  font-size: 30px;
+}
+.authWrapper__subTitle {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: #94a19c;
+  font-size: 16px;
+}
+.authWrapper__emailBlockText, .authWrapper__passBlockText, .authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError {
+  width: 100%;
+  height: auto;
+  color: #94a19c;
+  font-size: 16px;
+}
+.authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError {
+  color: #ef4444;
+}
+.authWrapper__emailBlockInput, .authWrapper__passBlockInput, .authWrapper__emailBlockInputError, .authWrapper__passBlockInputError {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #27272a;
+  outline: none;
+  background-color: #09090b;
+  border-radius: 15px;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.authWrapper__emailBlockInput img, .authWrapper__passBlockInput img, .authWrapper__emailBlockInputError img, .authWrapper__passBlockInputError img {
+  width: 30px;
+  height: 30px;
+}
+.authWrapper__emailBlockInput_inputEmail, .authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputEmail, .authWrapper__passBlockInput_inputPass, .authWrapper__emailBlockInputError_inputEmail, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputEmail, .authWrapper__passBlockInputError_inputPass {
+  width: 85%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 15px;
+  color: white;
+}
+.authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputPass, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputPass {
+  width: 75%;
+}
+.authWrapper__emailBlockInputError {
+  border: 1px solid #ef4444;
+  background-color: rgba(239, 68, 68, 0.2117647059);
+}
+.authWrapper__passBlockInputError {
+  border: 1px solid #ef4444;
+  background-color: rgba(239, 68, 68, 0.2117647059);
+}
+.authWrapper__signIn {
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #fb913b, #f97316);
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(251, 145, 59, 0.6509803922);
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.authWrapper__signIn:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.authWrapper__signIn:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.authWrapper__border {
+  width: 100%;
+  height: 2px;
+  background-color: #27272a;
+}
+.authWrapper__createAccount {
+  margin-top: 10px;
+  color: #94a19c;
+  font-size: 16px;
+  height: auto;
+}
+.authWrapper__createAccount button {
+  color: #19afee;
+  cursor: pointer;
+}
+.authWrapper__createAccount button:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.authWrapper__createAccount button:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.authWrapper__createAccount button {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+@media (max-width: 455px) {
+  .authWrapper {
+    width: 100%;
+    margin: 0px 10px;
+  }
+}/*# sourceMappingURL=Auth.css.map */

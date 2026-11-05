@@ -1,0 +1,147 @@
+@mixin animButton{
+    &:hover{
+        transform: scale(1.02);
+        transition: all 0.1s;
+    }
+    &:active{
+        transform: scale(0.98);
+        transition: all 0.1s;
+    }
+}
+
+.authWrapper{
+    width: 450px;
+    height: 700px;
+    border: 2px solid #27272a;
+    border-radius: 20px;
+    background-color: #151518;
+    padding: 20px 50px 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    &__title{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        h1{
+            color: #F97316;
+            font-size: 50px;
+        }
+    }
+    &__loginTitle{
+        color: white;
+        font-size: 30px;
+    }
+    &__subTitle{
+        margin-top: 10px;
+        margin-bottom: 40px;
+        color: #94a19c;
+        font-size: 16px;
+    }
+    &__emailBlockText,
+    &__passBlockText,
+    &__emailBlockTextEmptyError,
+    &__passBlockTextEmptyError{
+        width: 100%;
+        height: auto;
+        color: #94a19c;
+        font-size: 16px;
+    }
+    &__emailBlockTextEmptyError,
+    &__passBlockTextEmptyError{
+        color: #ef4444;
+    }
+    &__emailBlockInput,
+    &__passBlockInput,
+    &__emailBlockInputError,
+    &__passBlockInputError{
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        border: 1px solid #27272a;
+        outline: none;
+        background-color: #09090b;
+        border-radius: 15px;
+        margin-top: -10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        &_inputEmail,
+        &_inputPass{
+            width: 85%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 15px;
+            color: white;
+        }
+        &_inputPass{
+            width: 75%;
+        }
+    }
+    &__emailBlockInputError{
+        border: 1px solid #ef4444;
+        background-color: #ef444436;
+    }
+    &__passBlockInputError{
+        border: 1px solid #ef4444;
+        background-color: #ef444436;
+    }
+
+    &__signIn{
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        background: linear-gradient(180deg, #fb913b, #f97316);
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 10px #fb913ba6;
+        margin-top: 20px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        @include animButton;
+    }
+    &__border{
+        width: 100%;
+        height: 2px;
+        background-color: #27272a;
+    }
+    &__createAccount{
+        margin-top: 10px;
+        color: #94a19c;
+        font-size: 16px;
+        height: auto;
+        button{
+            color: #19afee;
+            cursor: pointer;
+            @include animButton;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+    }
+}
+
+@media(max-width: 455px){
+    .authWrapper{
+        width: 100%;
+        margin: 0px 10px;
+    }
+}

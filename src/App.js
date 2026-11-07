@@ -9,7 +9,7 @@ function App() {
       <div className='wrapper'>
         <Routes>
           <Route path='/' element={<Auth/>}/>
-          <Route path='/' element={<DashBoard/>}/>
+          <Route path='/dashboard' element={<DashBoard/>}/>
         </Routes>
       </div>
     </BrowserRouter>

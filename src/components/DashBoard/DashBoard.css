@@ -1,1 +1,180 @@
-/*# sourceMappingURL=DashBoard.css.map */
+.wrapperDashboard {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.4fr 7fr;
+}
+.wrapperDashboard__nav {
+  background-color: #111113;
+  border-right: 2px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 15px 15px 15px;
+}
+.wrapperDashboard__nav_navBlock {
+  width: 100%;
+  height: auto;
+  gap: 10px;
+}
+.wrapperDashboard__nav_navBlock_title {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+.wrapperDashboard__nav_navBlock_title img {
+  height: 45px;
+}
+.wrapperDashboard__nav_navBlock_title h1 {
+  color: #F97316;
+}
+.wrapperDashboard__nav_navBlock_homeActive, .wrapperDashboard__nav_navBlock_ticketsActive, .wrapperDashboard__nav_navBlock_scheduleActive {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 10px 10px;
+  background-color: #2d1d14;
+  border-radius: 10px;
+  gap: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.wrapperDashboard__nav_navBlock_homeActive p, .wrapperDashboard__nav_navBlock_ticketsActive p, .wrapperDashboard__nav_navBlock_scheduleActive p {
+  color: #f97316;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.wrapperDashboard__nav_navBlock_homeActive_activeIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/home-orange.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_ticketsActive_activeIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/document-orange.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_scheduleActive_activeIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/calendar-orange.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_homeInactive, .wrapperDashboard__nav_navBlock_ticketsInactive, .wrapperDashboard__nav_navBlock_scheduleInactive {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 10px 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  gap: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.wrapperDashboard__nav_navBlock_homeInactive img, .wrapperDashboard__nav_navBlock_ticketsInactive img, .wrapperDashboard__nav_navBlock_scheduleInactive img {
+  width: 25px;
+  height: 25px;
+}
+.wrapperDashboard__nav_navBlock_homeInactive p, .wrapperDashboard__nav_navBlock_ticketsInactive p, .wrapperDashboard__nav_navBlock_scheduleInactive p {
+  color: #7d7d84;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.wrapperDashboard__nav_navBlock_homeInactive p:hover, .wrapperDashboard__nav_navBlock_ticketsInactive p:hover, .wrapperDashboard__nav_navBlock_scheduleInactive p:hover {
+  color: white;
+}
+.wrapperDashboard__nav_navBlock_homeInactive:hover .wrapperDashboard__nav_navBlock_homeInactive_inactiveIMG {
+  background-image: url(../../img/home-white.svg);
+}
+.wrapperDashboard__nav_navBlock_homeInactive:hover p {
+  color: white;
+}
+.wrapperDashboard__nav_navBlock_homeInactive_inactiveIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/home-silver.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_homeInactive:hover {
+  background-color: #1c1c1f;
+}
+.wrapperDashboard__nav_navBlock_ticketsInactive:hover .wrapperDashboard__nav_navBlock_ticketsInactive_inactiveIMG {
+  background-image: url(../../img/document-white.svg);
+}
+.wrapperDashboard__nav_navBlock_ticketsInactive:hover p {
+  color: white;
+}
+.wrapperDashboard__nav_navBlock_ticketsInactive_inactiveIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/document-silver.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_ticketsInactive:hover {
+  background-color: #1c1c1f;
+}
+.wrapperDashboard__nav_navBlock_scheduleInactive:hover .wrapperDashboard__nav_navBlock_scheduleActive_inactiveIMG {
+  background-image: url(../../img/calendar-white.svg);
+}
+.wrapperDashboard__nav_navBlock_scheduleInactive:hover p {
+  color: white;
+}
+.wrapperDashboard__nav_navBlock_scheduleInactive_inactiveIMG {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../img/calendar-silver.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapperDashboard__nav_navBlock_scheduleInactive:hover {
+  background-color: #1c1c1f;
+}
+.wrapperDashboard__nav_employee {
+  width: 100%;
+  height: 70px;
+  background-color: #18181b;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.wrapperDashboard__nav_employee_shortName {
+  width: 50px;
+  height: 50px;
+  background-color: #ef610f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.wrapperDashboard__nav_employee_shortName p {
+  margin-top: -4px;
+}
+.wrapperDashboard__nav_employee_fullNamePossition_name {
+  color: white;
+  font-weight: bold;
+}
+.wrapperDashboard__nav_employee_fullNamePossition_position {
+  color: #6e7177;
+}/*# sourceMappingURL=DashBoard.css.map */

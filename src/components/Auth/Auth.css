@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  box-shadow: 0px 0px 100px rgba(251, 145, 59, 0.137254902);
 }
 .authWrapper__title {
   width: 100%;
@@ -16,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .authWrapper__title h1 {
   color: #F97316;
@@ -26,22 +27,28 @@
   color: white;
   font-size: 30px;
 }
-.authWrapper__subTitle {
+.authWrapper__subTitle, .authWrapper__subTitleReg {
   margin-top: 10px;
   margin-bottom: 40px;
   color: #94a19c;
   font-size: 16px;
 }
-.authWrapper__emailBlockText, .authWrapper__passBlockText, .authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError {
+.authWrapper__subTitleReg {
+  margin-bottom: 10px;
+}
+.authWrapper__emailBlockText, .authWrapper__emailBlockTextReg, .authWrapper__passBlockText, .authWrapper__passBlockTextReg, .authWrapper__passConfirmBlockText, .authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError, .authWrapper__passConfirmBlockTextEmptyError {
   width: 100%;
   height: auto;
   color: #94a19c;
   font-size: 16px;
 }
-.authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError {
+.authWrapper__emailBlockTextReg, .authWrapper__passBlockTextReg, .authWrapper__passConfirmBlockText, .authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError, .authWrapper__passConfirmBlockTextEmptyError {
+  margin-bottom: 3px;
+}
+.authWrapper__emailBlockTextEmptyError, .authWrapper__passBlockTextEmptyError, .authWrapper__passConfirmBlockTextEmptyError {
   color: #ef4444;
 }
-.authWrapper__emailBlockInput, .authWrapper__passBlockInput, .authWrapper__emailBlockInputError, .authWrapper__passBlockInputError {
+.authWrapper__emailBlockInput, .authWrapper__passBlockInput, .authWrapper__passConfirmBlockInput, .authWrapper__emailBlockInputError, .authWrapper__passBlockInputError, .authWrapper__passConfirmBlockInputError {
   width: 100%;
   height: 50px;
   padding: 10px;
@@ -55,11 +62,15 @@
   gap: 15px;
   margin-bottom: 10px;
 }
-.authWrapper__emailBlockInput img, .authWrapper__passBlockInput img, .authWrapper__emailBlockInputError img, .authWrapper__passBlockInputError img {
+.authWrapper__emailBlockInput:focus-within, .authWrapper__passBlockInput:focus-within, .authWrapper__passConfirmBlockInput:focus-within, .authWrapper__emailBlockInputError:focus-within, .authWrapper__passBlockInputError:focus-within, .authWrapper__passConfirmBlockInputError:focus-within {
+  border: 1px solid #f97316;
+  box-shadow: 0px 0px 10px #fb913b;
+}
+.authWrapper__emailBlockInput img, .authWrapper__passBlockInput img, .authWrapper__passConfirmBlockInput img, .authWrapper__emailBlockInputError img, .authWrapper__passBlockInputError img, .authWrapper__passConfirmBlockInputError img {
   width: 30px;
   height: 30px;
 }
-.authWrapper__emailBlockInput_inputEmail, .authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputEmail, .authWrapper__passBlockInput_inputPass, .authWrapper__emailBlockInputError_inputEmail, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputEmail, .authWrapper__passBlockInputError_inputPass {
+.authWrapper__emailBlockInput_inputEmail, .authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputEmail, .authWrapper__passBlockInput_inputPass, .authWrapper__passConfirmBlockInput_inputEmail, .authWrapper__passConfirmBlockInput_inputPass, .authWrapper__emailBlockInputError_inputEmail, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputEmail, .authWrapper__passBlockInputError_inputPass, .authWrapper__passConfirmBlockInputError_inputEmail, .authWrapper__passConfirmBlockInputError_inputPass {
   width: 85%;
   height: 100%;
   border: none;
@@ -68,14 +79,10 @@
   font-size: 15px;
   color: white;
 }
-.authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputPass, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputPass {
+.authWrapper__emailBlockInput_inputPass, .authWrapper__passBlockInput_inputPass, .authWrapper__passConfirmBlockInput_inputPass, .authWrapper__emailBlockInputError_inputPass, .authWrapper__passBlockInputError_inputPass, .authWrapper__passConfirmBlockInputError_inputPass {
   width: 75%;
 }
-.authWrapper__emailBlockInputError {
-  border: 1px solid #ef4444;
-  background-color: rgba(239, 68, 68, 0.2117647059);
-}
-.authWrapper__passBlockInputError {
+.authWrapper__emailBlockInputError, .authWrapper__passBlockInputError, .authWrapper__passConfirmBlockInputError {
   border: 1px solid #ef4444;
   background-color: rgba(239, 68, 68, 0.2117647059);
 }
@@ -99,6 +106,29 @@
   transition: all 0.1s;
 }
 .authWrapper__signIn:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.authWrapper__register {
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #fb913b, #f97316);
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(251, 145, 59, 0.6509803922);
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.authWrapper__register:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.authWrapper__register:active {
   transform: scale(0.98);
   transition: all 0.1s;
 }
@@ -133,6 +163,19 @@
   border: none;
   outline: none;
   font-size: 16px;
+}
+.authWrapper__visiblePass {
+  transition: all 0.2s;
+}
+.authWrapper__visiblePass:hover {
+  cursor: pointer;
+  background-color: rgba(39, 39, 42, 0.6509803922);
+  border-radius: 5px;
+  transition: all 0.2s;
+  transform: scale(1.05);
+}
+.authWrapper__visiblePass:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 455px) {

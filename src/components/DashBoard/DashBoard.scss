@@ -1,0 +1,204 @@
+.wrapperDashboard{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.4fr 7fr;
+    &__nav{
+        background-color: #111113;
+        border-right: 2px solid #27272a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 20px 15px 15px 15px;
+        &_navBlock{
+            width: 100%;
+            height: auto;
+            gap: 10px;
+            &_title{
+                display: flex;
+                gap: 10px;
+                margin-left: 20px;
+                margin-bottom: 50px;
+                img{
+                    height: 45px;
+                }
+                h1{
+                    color: #F97316;
+                }
+            }
+            &_homeActive,
+            &_ticketsActive,
+            &_scheduleActive{
+                display: flex;
+                width: 100%;
+                height: auto;
+                padding: 10px 10px;
+                background-color: #2d1d14;
+                border-radius: 10px;
+                gap: 15px;
+                cursor: pointer;
+                margin-bottom: 10px;
+                p{
+                    color: #f97316;
+                    margin-top: 2px;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+            &_homeActive{
+                &_activeIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/home-orange.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            &_ticketsActive{
+                &_activeIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/document-orange.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            &_scheduleActive{
+                &_activeIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/calendar-orange.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+            &_homeInactive,
+            &_ticketsInactive,
+            &_scheduleInactive{
+                display: flex;
+                width: 100%;
+                height: auto;
+                padding: 10px 10px;
+                background-color: transparent;
+                border-radius: 10px;
+                gap: 15px;
+                cursor: pointer;
+                margin-bottom: 10px;
+                img{
+                    width: 25px;
+                    height: 25px;
+                }
+                p{
+                    color: #7d7d84;
+                    margin-top: 2px;
+                    font-weight: bold;
+                    font-size: 18px;
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+            &_homeInactive{
+                &:hover {
+                    .wrapperDashboard__nav_navBlock_homeInactive_inactiveIMG{
+                        background-image: url(../../img/home-white.svg);
+                    }
+                    p{
+                        color: white;
+                    }
+                }
+                &_inactiveIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/home-silver.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &:hover{
+                    background-color: #1c1c1f;
+                }
+            }
+            &_ticketsInactive{
+                &:hover {
+                    .wrapperDashboard__nav_navBlock_ticketsInactive_inactiveIMG{
+                        background-image: url(../../img/document-white.svg);
+                    }
+                    p{
+                        color: white;
+                    }
+                }
+                &_inactiveIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/document-silver.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &:hover{
+                    background-color: #1c1c1f;
+                }
+            }
+            &_scheduleInactive{
+                &:hover {
+                    .wrapperDashboard__nav_navBlock_scheduleActive_inactiveIMG{
+                        background-image: url(../../img/calendar-white.svg);
+                    }
+                    p{
+                        color: white;
+                    }
+                }
+                &_inactiveIMG{
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../../img/calendar-silver.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &:hover{
+                    background-color: #1c1c1f;
+                }
+            }
+        }
+        &_employee{
+            width: 100%;
+            height: 70px;
+            background-color: #18181b;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            &_shortName{
+                width: 50px;
+                height: 50px;
+                background-color: #ef610f;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                p{
+                    margin-top: -4px;
+                }
+            }
+            &_fullNamePossition{
+                &_name{
+                    color: white;
+                    font-weight: bold;
+                }
+                &_position{
+                    color: #6e7177;
+                }
+            }
+        }
+    }
+}

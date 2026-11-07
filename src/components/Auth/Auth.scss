@@ -20,13 +20,14 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    box-shadow: 0px 0px 100px #fb913b23;
     &__title{
         width: 100%;
         height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         h1{
             color: #F97316;
             font-size: 50px;
@@ -36,29 +37,49 @@
         color: white;
         font-size: 30px;
     }
-    &__subTitle{
+    &__subTitle,
+    &__subTitleReg{
         margin-top: 10px;
         margin-bottom: 40px;
         color: #94a19c;
         font-size: 16px;
     }
+    &__subTitleReg{
+        margin-bottom: 10px;
+    }
     &__emailBlockText,
+    &__emailBlockTextReg,
     &__passBlockText,
+    &__passBlockTextReg,
+    &__passConfirmBlockText,
     &__emailBlockTextEmptyError,
-    &__passBlockTextEmptyError{
+    &__passBlockTextEmptyError,
+    &__passConfirmBlockTextEmptyError{
         width: 100%;
         height: auto;
         color: #94a19c;
         font-size: 16px;
     }
+    &__emailBlockTextReg,
+    &__passBlockTextReg,
+    &__passConfirmBlockText,
     &__emailBlockTextEmptyError,
-    &__passBlockTextEmptyError{
+    &__passBlockTextEmptyError,
+    &__passConfirmBlockTextEmptyError{
+        margin-bottom: 3px;
+    }
+
+    &__emailBlockTextEmptyError,
+    &__passBlockTextEmptyError,
+    &__passConfirmBlockTextEmptyError{
         color: #ef4444;
     }
     &__emailBlockInput,
     &__passBlockInput,
+    &__passConfirmBlockInput,
     &__emailBlockInputError,
-    &__passBlockInputError{
+    &__passBlockInputError,
+    &__passConfirmBlockInputError{
         width: 100%;
         height: 50px;
         padding: 10px;
@@ -71,6 +92,10 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 10px;
+        &:focus-within{
+            border: 1px solid #f97316;
+            box-shadow: 0px 0px 10px #fb913b;
+        }
         img{
             width: 30px;
             height: 30px;
@@ -89,15 +114,12 @@
             width: 75%;
         }
     }
-    &__emailBlockInputError{
+    &__emailBlockInputError,
+    &__passBlockInputError,
+    &__passConfirmBlockInputError{
         border: 1px solid #ef4444;
         background-color: #ef444436;
     }
-    &__passBlockInputError{
-        border: 1px solid #ef4444;
-        background-color: #ef444436;
-    }
-
     &__signIn{
         width: 100%;
         height: 50px;
@@ -112,6 +134,22 @@
         font-size: 18px;
         font-weight: bold;
         margin-bottom: 30px;
+        @include animButton;
+    }
+    &__register{
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        background: linear-gradient(180deg, #fb913b, #f97316);
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 10px #fb913ba6;
+        margin-top: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0px;
         @include animButton;
     }
     &__border{
@@ -137,10 +175,23 @@
             font-size: 16px;
         }
     }
+    &__visiblePass{
+        transition: all 0.2s;
+        &:hover{
+            cursor: pointer;
+            background-color: #27272aa6;
+            border-radius: 5px;
+            transition: all 0.2s;
+            transform: scale(1.05);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
+    }
 }
 
-@media(max-width: 455px){
-    .authWrapper{
+@media(max-width: 455px) {
+    .authWrapper {
         width: 100%;
         margin: 0px 10px;
     }

@@ -1,0 +1,199 @@
+@mixin animButton{
+    &:hover{
+        transform: scale(1.02);
+        transition: all 0.1s;
+    }
+    &:active{
+        transform: scale((0.98));
+        transition: all 0.1s;
+    }
+}
+
+.homeWrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+.blockTitle{
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #27272a;
+    h1{
+        color: white;
+    }
+    p{
+        color: #7d7d84;
+    }
+}
+
+.blockGreeting{
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    margin-top: 20px;
+    &__content{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #18181a, #1c1917);
+        border-radius: 10px;
+        border: 2px solid #27272a;
+        &_desscription{
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &_infoShift{
+                h1{
+                    color: white;
+                }
+                &_sunTitle{
+                    margin-top: 10px;
+                    color: #7d7d84;
+                    margin-bottom: 20px;
+                }
+                &_morning,
+                &_evening,
+                &_night{
+                    margin-top: 10px;
+                    width: 250px;
+                    height: 35px;
+                    border-radius: 10px;
+                    border: 1px solid #22d3ee;
+                    background-color: #22d3ee56;
+                    padding: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    &_circle{
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: #22d3ee;
+                    }
+                    &_infoShift{
+                        color: #22d3ee;
+                    }
+                    &_square{
+                        height: 3px;
+                        width: 3px;
+                        background-color: #22d3ee;
+                    }
+                    &_time{
+                        color: #22d3ee;
+                    }
+                }
+                &_evening{
+                    border: 1px solid #f97316;
+                    background-color: #f974162d;
+                    &_circle{
+                        background-color: #f97316;
+                    }
+                    &_infoShift{
+                        color: #f97316;
+                    }
+                    &_square{
+                        background-color: #f97316;
+                    }
+                    &_time{
+                        color: #f97316;
+                    }
+                }
+                &_night{
+                    border: 1px solid #bc7eff;
+                    background-color: #bc7eff33;
+                    &_circle{
+                        background-color: #bc7eff;
+                    }
+                    &_infoShift{
+                        color: #bc7eff;
+                    }
+                    &_square{
+                        background-color: #bc7eff;
+                    }
+                    &_time{
+                        color: #bc7eff;
+                    }
+                }
+            }
+            &_startShift{
+                &_morning{
+                    background: linear-gradient(180deg, #22d3ee, #59e9ff);
+                    width: 170px;
+                    height: 55px;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                    box-shadow: inset 0px 1px 3px white, 
+                                0px 0px 20px #22d3ee70;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    @include animButton;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                &_evening{
+                    background: linear-gradient(0deg, #f97316, #fb923c);
+                    width: 170px;
+                    height: 55px;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                    box-shadow: inset 0px 1px 3px white, 
+                                0px 0px 20px #f9771b96;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    @include animButton;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                &_night{
+                    background: linear-gradient(0deg, #bc7eff, #cc9cff);
+                    width: 170px;
+                    height: 55px;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                    box-shadow: inset 0px 1px 3px white, 
+                                0px 0px 20px #bc7eff88;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    @include animButton;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,206 @@
-/*# sourceMappingURL=Home.css.map */
+.homeWrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.blockTitle {
+  width: 100%;
+  height: auto;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #27272a;
+}
+.blockTitle h1 {
+  color: white;
+}
+.blockTitle p {
+  color: #7d7d84;
+}
+
+.blockGreeting {
+  width: 100%;
+  height: auto;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+.blockGreeting__content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #18181a, #1c1917);
+  border-radius: 10px;
+  border: 2px solid #27272a;
+}
+.blockGreeting__content_desscription {
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockGreeting__content_desscription_infoShift h1 {
+  color: white;
+}
+.blockGreeting__content_desscription_infoShift_sunTitle {
+  margin-top: 10px;
+  color: #7d7d84;
+  margin-bottom: 20px;
+}
+.blockGreeting__content_desscription_infoShift_morning, .blockGreeting__content_desscription_infoShift_evening, .blockGreeting__content_desscription_infoShift_night {
+  margin-top: 10px;
+  width: 250px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid #22d3ee;
+  background-color: rgba(34, 211, 238, 0.337254902);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.blockGreeting__content_desscription_infoShift_morning_circle, .blockGreeting__content_desscription_infoShift_evening_circle, .blockGreeting__content_desscription_infoShift_night_circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22d3ee;
+}
+.blockGreeting__content_desscription_infoShift_morning_infoShift, .blockGreeting__content_desscription_infoShift_evening_infoShift, .blockGreeting__content_desscription_infoShift_night_infoShift {
+  color: #22d3ee;
+}
+.blockGreeting__content_desscription_infoShift_morning_square, .blockGreeting__content_desscription_infoShift_evening_square, .blockGreeting__content_desscription_infoShift_night_square {
+  height: 3px;
+  width: 3px;
+  background-color: #22d3ee;
+}
+.blockGreeting__content_desscription_infoShift_morning_time, .blockGreeting__content_desscription_infoShift_evening_time, .blockGreeting__content_desscription_infoShift_night_time {
+  color: #22d3ee;
+}
+.blockGreeting__content_desscription_infoShift_evening {
+  border: 1px solid #f97316;
+  background-color: rgba(249, 116, 22, 0.1764705882);
+}
+.blockGreeting__content_desscription_infoShift_evening_circle {
+  background-color: #f97316;
+}
+.blockGreeting__content_desscription_infoShift_evening_infoShift {
+  color: #f97316;
+}
+.blockGreeting__content_desscription_infoShift_evening_square {
+  background-color: #f97316;
+}
+.blockGreeting__content_desscription_infoShift_evening_time {
+  color: #f97316;
+}
+.blockGreeting__content_desscription_infoShift_night {
+  border: 1px solid #bc7eff;
+  background-color: rgba(188, 126, 255, 0.2);
+}
+.blockGreeting__content_desscription_infoShift_night_circle {
+  background-color: #bc7eff;
+}
+.blockGreeting__content_desscription_infoShift_night_infoShift {
+  color: #bc7eff;
+}
+.blockGreeting__content_desscription_infoShift_night_square {
+  background-color: #bc7eff;
+}
+.blockGreeting__content_desscription_infoShift_night_time {
+  color: #bc7eff;
+}
+.blockGreeting__content_desscription_startShift_morning {
+  background: linear-gradient(180deg, #22d3ee, #59e9ff);
+  width: 170px;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: inset 0px 1px 3px white, 0px 0px 20px rgba(34, 211, 238, 0.4392156863);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.blockGreeting__content_desscription_startShift_morning:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_morning:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_morning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.blockGreeting__content_desscription_startShift_morning img {
+  width: 30px;
+  height: 30px;
+}
+.blockGreeting__content_desscription_startShift_evening {
+  background: linear-gradient(0deg, #f97316, #fb923c);
+  width: 170px;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: inset 0px 1px 3px white, 0px 0px 20px rgba(249, 119, 27, 0.5882352941);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.blockGreeting__content_desscription_startShift_evening:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_evening:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_evening {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.blockGreeting__content_desscription_startShift_evening img {
+  width: 30px;
+  height: 30px;
+}
+.blockGreeting__content_desscription_startShift_night {
+  background: linear-gradient(0deg, #bc7eff, #cc9cff);
+  width: 170px;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: inset 0px 1px 3px white, 0px 0px 20px rgba(188, 126, 255, 0.5333333333);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.blockGreeting__content_desscription_startShift_night:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_night:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
+}
+.blockGreeting__content_desscription_startShift_night {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.blockGreeting__content_desscription_startShift_night img {
+  width: 30px;
+  height: 30px;
+}/*# sourceMappingURL=Home.css.map */

@@ -203,4 +203,149 @@
 .blockGreeting__content_desscription_startShift_night img {
   width: 30px;
   height: 30px;
+}
+.blockGreeting__ticketBlock {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+}
+.blockGreeting__ticketBlock_title {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.blockGreeting__ticketBlock_form {
+  width: 100%;
+  height: auto;
+  background-color: #141416;
+  padding: 30px 40px;
+  border-radius: 10px;
+  border: 2px solid #27272a;
+}
+.blockGreeting__ticketBlock_form_firstLine {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockGreeting__ticketBlock_form_firstLine_leadEmail_title {
+  color: #7d7d84;
+  margin-bottom: 10px;
+}
+.blockGreeting__ticketBlock_form_firstLine_leadEmail_leadEmail {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #27272a;
+  outline: none;
+  background-color: #09090b;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  font-size: 18px;
+}
+.blockGreeting__ticketBlock_form_firstLine_leadEmail_leadEmail:focus {
+  border: 1px solid #f97316;
+  box-shadow: 0px 0px 5px #f97316;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_title {
+  color: #7d7d84;
+  margin-bottom: 10px;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedActive, .blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdActive {
+  width: 45%;
+  height: 40px;
+  background-color: #15282c;
+  border: 1px solid #22d3ee;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #22d3ee;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px #22d3ee;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedActive:hover, .blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdActive:hover {
+  background-color: #224147;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdActive {
+  background-color: #2b1e16;
+  border: 1px solid #f97316;
+  color: #f97316;
+  box-shadow: 0px 0px 10px #f97316;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdActive:hover {
+  background-color: #5a3921;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedInactive, .blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdInactive {
+  width: 45%;
+  height: 40px;
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #7d7d84;
+  font-size: 18px;
+  font-weight: bold;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedInactive:hover, .blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdInactive:hover {
+  border: 1px solid #3f3f46;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedInactive:hover {
+  box-shadow: 0px 0px 10px #22d3ee;
+  color: #22d3ee;
+  border: 1px solid #22d3ee;
+}
+.blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdInactive:hover {
+  box-shadow: 0px 0px 10px #f97316;
+  color: #f97316;
+  border: 1px solid #f97316;
+}
+.blockGreeting__ticketBlock_titleSecondBlock, .blockGreeting__ticketBlock_titleThirdBlock {
+  color: #7d7d84;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.blockGreeting__ticketBlock textarea {
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  background-color: #09090b;
+  border: 2px solid #27272a;
+  border-radius: 10px;
+  color: white;
+}
+.blockGreeting__ticketBlock textarea:focus {
+  border: 1px solid #f97316;
+  box-shadow: 0px 0px 5px #f97316;
+}
+.blockGreeting__ticketBlock_button {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 30px;
+  gap: 20px;
+}
+.blockGreeting__ticketBlock_button_clear {
+  width: 150px;
+  height: 100%;
+}
+.blockGreeting__ticketBlock_button_saveReport {
+  width: 150px;
+  height: 100%;
 }/*# sourceMappingURL=Home.css.map */

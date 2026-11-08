@@ -7,6 +7,11 @@ const Home = () => {
   const [name, setName] = useState('Andrii')
   const [shift, setShift] = useState('morning')
 
+  const [leadEmail, setLeadEmail] = useState('')
+  const [ticketStatus, setTicketStatus] = useState('resolved')
+  const [leadQuestion, setLeadQuestion] = useState('')
+  const [resolveQuestion, setResolveQuestion] = useState('')
+
   const date = new Date
   const month = date.toLocaleString('en-EN', {
     month: 'short',
@@ -66,6 +71,49 @@ const Home = () => {
                   <img src={play}/>
                   Start Shift</button>
               ) : null}
+            </div>
+          </div>
+        </div>
+        <div className='blockGreeting__ticketBlock'>
+          <p className='blockGreeting__ticketBlock_title'>Chat Report</p>
+          <div className='blockGreeting__ticketBlock_form'>
+            <div className='blockGreeting__ticketBlock_form_firstLine'>
+              <div className='blockGreeting__ticketBlock_form_firstLine_leadEmail'>
+                <p className='blockGreeting__ticketBlock_form_firstLine_leadEmail_title'>Lead Email</p>
+                <input 
+                  className='blockGreeting__ticketBlock_form_firstLine_leadEmail_leadEmail'
+                  type='text'
+                  placeholder='company@gmail.com'
+                  value={leadEmail}  
+                  onChange={(e) => setLeadEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className='blockGreeting__ticketBlock_form_firstLine_ticketStatus'>
+                <p className='blockGreeting__ticketBlock_form_firstLine_ticketStatus_title'>Status</p>
+                <div className='blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus'>
+                  <button className={ticketStatus === 'resolved' ? 'blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedActive' : 'blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_resolvedInactive'} onClick={() => setTicketStatus('resolved')}>Resolved</button>
+                  <button className={ticketStatus === 'hold' ? 'blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdActive' : 'blockGreeting__ticketBlock_form_firstLine_ticketStatus_buttonStatus_holdInactive'} onClick={() => setTicketStatus('hold')}>Hold</button>
+                </div>
+              </div>
+            </div>
+
+            <p className='blockGreeting__ticketBlock_titleSecondBlock'>What did the lead write / ask?</p>
+            <textarea
+              placeholder='Describe the inquiry or message from the lead...'
+              value={leadQuestion}
+              onChange={(e) => setLeadQuestion(e.target.value)}
+            ></textarea>
+
+            <p className='blockGreeting__ticketBlock_titleThirdBlock'>What was done / result</p>
+            <textarea
+              placeholder='Describe the action taken and the outcome'
+              value={resolveQuestion}
+              onChange={(e) => setResolveQuestion(e.target.value)}
+            ></textarea>
+
+            <div className='blockGreeting__ticketBlock_button'>
+              <button className='blockGreeting__ticketBlock_button_clear'>Clear</button>
+              <button className='blockGreeting__ticketBlock_button_saveReport'>Save Report</button>
             </div>
           </div>
         </div>

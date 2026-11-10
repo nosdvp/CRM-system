@@ -11,6 +11,7 @@ const Home = () => {
   const [ticketStatus, setTicketStatus] = useState('resolved')
   const [leadQuestion, setLeadQuestion] = useState('')
   const [resolveQuestion, setResolveQuestion] = useState('')
+  const [reasonHold, setReasonHold] = useState('')
 
   const date = new Date
   const month = date.toLocaleString('en-EN', {
@@ -111,8 +112,28 @@ const Home = () => {
               onChange={(e) => setResolveQuestion(e.target.value)}
             ></textarea>
 
+            {ticketStatus === 'hold' ? (
+              <>
+                <p className='blockGreeting__ticketBlock_titleFourthBlock'>What needs to be done next? (Hold reason)</p>
+                <textarea
+                  placeholder="Explain why it's on hold and what the next steps are..."
+                  value={reasonHold}
+                  onChange={(e) => setReasonHold(e.target.value)}
+                ></textarea>
+              </>
+            ) : null}
+
             <div className='blockGreeting__ticketBlock_button'>
-              <button className='blockGreeting__ticketBlock_button_clear'>Clear</button>
+              <button 
+                className='blockGreeting__ticketBlock_button_clear'
+                onClick={() => {
+                  setLeadEmail('')
+                  setTicketStatus('resolved')
+                  setLeadQuestion('')
+                  setResolveQuestion('')
+                  setReasonHold('')
+                }}
+              >Clear</button>
               <button className='blockGreeting__ticketBlock_button_saveReport'>Save Report</button>
             </div>
           </div>

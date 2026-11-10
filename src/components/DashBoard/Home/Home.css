@@ -1,6 +1,6 @@
 .homeWrapper {
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 
 .blockTitle {
@@ -312,7 +312,7 @@
   color: #f97316;
   border: 1px solid #f97316;
 }
-.blockGreeting__ticketBlock_titleSecondBlock, .blockGreeting__ticketBlock_titleThirdBlock {
+.blockGreeting__ticketBlock_titleSecondBlock, .blockGreeting__ticketBlock_titleThirdBlock, .blockGreeting__ticketBlock_titleFourthBlock {
   color: #7d7d84;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -334,7 +334,7 @@
 }
 .blockGreeting__ticketBlock_button {
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -344,8 +344,39 @@
 .blockGreeting__ticketBlock_button_clear {
   width: 150px;
   height: 100%;
+  outline: none;
+  border: 2px solid #27272a;
+  background-color: transparent;
+  color: #7d7d84;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-size: 18px;
+}
+.blockGreeting__ticketBlock_button_clear:hover {
+  border: 2px solid #3f3f46;
+  color: white;
+  transition: all 0.1s;
 }
 .blockGreeting__ticketBlock_button_saveReport {
   width: 150px;
   height: 100%;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #f97316, #fb923c);
+  box-shadow: inset 0px 1px 3px white, 0px 0px 20px rgba(249, 119, 27, 0.5882352941);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.blockGreeting__ticketBlock_button_saveReport:hover {
+  transform: scale(1.03);
+  transition: all 0.1s;
+}
+.blockGreeting__ticketBlock_button_saveReport:active {
+  transform: scale(0.97);
+  transition: all 0.1s;
 }/*# sourceMappingURL=Home.css.map */

@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css'
 import play from '../../../img/play.svg'
+import { auth, db } from '../../../firebase'
+import { doc, getDoc, setDoc, collection, addDoc } from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const Home = () => {
 
-  const [name, setName] = useState('Andrii')
+  const [name, setName] = useState('')
   const [shift, setShift] = useState('morning')
+
+  const [employeeEmail, setEmployeeEmail] = useState('')
 
   const [leadEmail, setLeadEmail] = useState('')
   const [ticketStatus, setTicketStatus] = useState('resolved')
@@ -20,6 +25,18 @@ const Home = () => {
   const day = date.toLocaleString('en-EN', {
     weekday: 'long'
   })
+
+  const saveTicket = async () => {
+    try{
+      await addDoc(collection(db, 'tickets'), {
+        leadEmail: leadEmail,
+        ticketStatus: ticketStatus,
+        leadQuestion: leadQuestion
+      })
+    }catch(error){
+      console.log(error.message)
+    }
+  }
 
   return (
     <div className='homeWrapper'>
@@ -134,7 +151,7 @@ const Home = () => {
                   setReasonHold('')
                 }}
               >Clear</button>
-              <button className='blockGreeting__ticketBlock_button_saveReport'>Save Report</button>
+              <button className='blockGreeting__ticketBlock_button_saveReport' onClick={() => saveTicket()}>Save Report</button>
             </div>
           </div>
         </div>

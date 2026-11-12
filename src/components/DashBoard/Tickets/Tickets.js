@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Tickets.css'
 import search from '../../../img/search.svg'
+import { auth, db } from '../../../firebase'
+import { doc, getDoc, setDoc, collection, addDoc } from 'firebase/firestore'
 
 const Tickets = () => {
 

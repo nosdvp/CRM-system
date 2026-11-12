@@ -4,6 +4,10 @@ import logo from '../../img/synca-icon.svg'
 import mail from '../../img/mail.svg'
 import lock from '../../img/lock.svg'
 import eye from '../../img/eye.svg'
+import { useNavigate } from 'react-router-dom'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { auth, db } from '../../firebase'
+import { setDoc, doc, addDoc } from 'firebase/firestore'
 
 const Auth = () => {
 
@@ -21,23 +25,31 @@ const Auth = () => {
   const [visiblePass, setVisiblePass] = useState(false)
   const [visibleConfirmPass, setVisibleConfirmPass] = useState(false)
 
-  const login = () => {
-    userEmail === '' && setUserEmailError('Please enter email')
-    userPassword === '' && setUserPasswordError('Please enter password')
+  const navigate = useNavigate();
+
+  const login = async () => {
+    await signInWithEmailAndPassword(auth, userEmail, userPassword)
+    navigate('/dasboard')
   }
 
-  const register = () => {
-    userEmail === '' && setUserEmailError('Please enter email')
-    userPassword === '' && setUserPasswordError('Please enter password')
-    userConfirmPassword === '' && setUserConfirmPassError('Please enter password')
+  const register = async () => {
+    try{
+      const userCredentials = await createUserWithEmailAndPassword(auth, userEmail, userPassword)
+      const user = userCredentials.user
 
-    if (
-      userPassword !== '' &&
-      userConfirmPassword !== '' &&
-      userPassword !== userConfirmPassword
-    ) {
-      setUserConfirmPassError('Passwords do not match')
-    }
+      await setDoc(doc(db, 'users', user.uid), {
+        email: userEmail,
+        role: 'worker',
+        createAt: new Date()
+      })
+    }catch(error){
+      console.log(error)
+    };
+    setUserEmail('')
+    setUserPassword('')
+    setUserConfirmPassword('')
+    setStep('login')
+    alert('Аккаунт успешно создан')
   }
 
   return (
@@ -102,7 +114,7 @@ const Auth = () => {
             />
           </div>
 
-          <button className='authWrapper__signIn' onClick={login}>Sign in</button>
+          <button className='authWrapper__signIn' onClick={() => login()}>Sign in</button>
 
           <p className='authWrapper__border'></p>
 
@@ -196,7 +208,7 @@ const Auth = () => {
               />
           </div>
 
-          <button className='authWrapper__register' onClick={register}>Registration</button>
+          <button className='authWrapper__register' onClick={() => register()}>Registration</button>
 
           <p className='authWrapper__border'></p>
 

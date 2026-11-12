@@ -1,17 +1,20 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"; // Подключаем модуль аутентификации
-import { getFirestore } from "firebase/firestore"; // Подключаем базу данных
+import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";      
+import { getFirestore } from "firebase/firestore"; 
 
 const firebaseConfig = {
-  apiKey: "ТВОЙ_API_KEY",
-  authDomain: "ТВОЙ_PROJECT_ID.firebaseapp.com",
-  projectId: "ТВОЙ_PROJECT_ID",
-  storageBucket: "ТВОЙ_PROJECT_ID.appspot.com",
-  messagingSenderId: "ТВОЙ_SENDER_ID",
-  appId: "ТВОЙ_APP_ID"
+  apiKey: "AIzaSyDM9UuN42azW-eV8-afMSygMM6NdHeqiJk",
+  authDomain: "casinocrm-56066.firebaseapp.com",
+  projectId: "casinocrm-56066",
+  storageBucket: "casinocrm-56066.firebasestorage.app",
+  messagingSenderId: "823328301295",
+  appId: "1:823328301295:web:bdf462a1b6a6b2276afb1a",
+  measurementId: "G-FBJ3PS0G89"
 };
 
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-export const auth = getAuth(app);
+export const auth = getAuth(app);   
 export const db = getFirestore(app);

@@ -147,7 +147,13 @@
 .wrapperDashboard__nav_navBlock_scheduleInactive:hover {
   background-color: #1c1c1f;
 }
-.wrapperDashboard__nav_employee {
+.wrapperDashboard__nav_nameLogout {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.wrapperDashboard__nav_nameLogout_employee {
   width: 100%;
   height: 70px;
   background-color: #18181b;
@@ -156,8 +162,9 @@
   align-items: center;
   padding: 10px;
   gap: 10px;
+  margin-bottom: 30px;
 }
-.wrapperDashboard__nav_employee_shortName {
+.wrapperDashboard__nav_nameLogout_employee_shortName {
   width: 50px;
   height: 50px;
   background-color: #ef610f;
@@ -169,13 +176,43 @@
   font-weight: bold;
   font-size: 20px;
 }
-.wrapperDashboard__nav_employee_shortName p {
+.wrapperDashboard__nav_nameLogout_employee_shortName p {
   margin-top: -4px;
 }
-.wrapperDashboard__nav_employee_fullNamePossition_name {
+.wrapperDashboard__nav_nameLogout_employee_fullNamePossition_name {
   color: white;
   font-weight: bold;
 }
-.wrapperDashboard__nav_employee_fullNamePossition_position {
+.wrapperDashboard__nav_nameLogout_employee_fullNamePossition_position {
   color: #6e7177;
+}
+.wrapperDashboard__nav_nameLogout_logout {
+  height: 48px;
+  width: 100%;
+  background: rgba(249, 116, 22, 0.1098039216);
+  border: 1px solid #f97316;
+  color: #ff8c38;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.25s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.wrapperDashboard__nav_nameLogout_logout:hover {
+  background: rgba(255, 106, 0, 0.9803921569);
+  color: white;
+  transform: scale(1.02);
+  transition: all 0.1s;
+  box-shadow: inset 0px 0px 5px white;
+}
+.wrapperDashboard__nav_nameLogout_logout:active {
+  background: rgba(255, 106, 0, 0.9803921569);
+  color: white;
+  transform: scale(0.98);
+  transition: all 0.1s;
 }/*# sourceMappingURL=DashBoard.css.map */

@@ -25,26 +25,27 @@ const Auth = () => {
   const [visiblePass, setVisiblePass] = useState(false)
   const [visibleConfirmPass, setVisibleConfirmPass] = useState(false)
 
+
   const navigate = useNavigate();
 
   const login = async () => {
     await signInWithEmailAndPassword(auth, userEmail, userPassword)
-    navigate('/dasboard')
+    navigate('/dashboard')
   }
 
   const register = async () => {
     try{
-      const userCredentials = await createUserWithEmailAndPassword(auth, userEmail, userPassword)
-      const user = userCredentials.user
+      const userCredetials = await createUserWithEmailAndPassword(auth, userEmail, userPassword)
+      const user = userCredetials.user
 
       await setDoc(doc(db, 'users', user.uid), {
         email: userEmail,
-        role: 'worker',
+        role: 'Customer Support',
         createAt: new Date()
       })
     }catch(error){
-      console.log(error)
-    };
+      console.log(error.message)
+    }
     setUserEmail('')
     setUserPassword('')
     setUserConfirmPassword('')

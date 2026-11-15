@@ -1,29 +1,56 @@
 import './DashBoard.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from '../../img/synca-icon.svg'
 import Home from './Home/Home'
 import Tickets from './Tickets/Tickets'
 import Schedule from './Schedule/Schedule'
+import { replace, useNavigate }from 'react-router-dom'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth, db } from '../../firebase'
+import { getDoc, doc } from 'firebase/firestore'
 
 const DashBoard = () => {
 
-  const [role, setRole] = useState('customerSupport')
-  const [employee, setEmployee] = useState('Andrii Mishchenko')
+  const [role, setRole] = useState('')
+  const [employeeName, setEmployeeName] = useState('')
 
   const [activeChapter, setActiveChapter] = useState('home')
 
-  let splitData = employee.split(' ')
-  let nameShort = []
-  for(let i = 0; i < splitData.length; i++){
-    let peaceName = splitData[i].slice(0, 1)
-    nameShort.push(peaceName)
-  }
-  console.log(nameShort)
+  const navigate = useNavigate()
 
+  const logout = async () => {
+    try{
+      await signOut(auth)
+      navigate('/', {replace: true})
+    }catch(error){
+      console.log('Ошибка при входе:', error)
+    }
+  }
+
+  useEffect(() => {
+    const unsubcribe = onAuthStateChanged(auth, async(user) => {
+      if(user){
+        try{
+          const copyDataBase = doc(db, 'users', user.uid)
+          const getUserData = await getDoc(copyDataBase)
+
+          if(getUserData.exists()){
+            const getData = getUserData.data()
+            setEmployeeName(getData.name)
+            setRole(getData.role)
+          }
+        }catch(error){
+          console.log('Please text name in DB')
+        }
+      }
+    })
+
+    return () => unsubcribe();
+  }, [])
 
   return (
     <>
-      {role === 'customerSupport' ? (
+      {role === 'Customer Support' ? (
         <div className='wrapperDashboard'>
           <div className='wrapperDashboard__nav'>
             <div className='wrapperDashboard__nav_navBlock'>
@@ -49,14 +76,22 @@ const DashBoard = () => {
             </div>
 
 
-            <div className='wrapperDashboard__nav_employee'>
-              <div className='wrapperDashboard__nav_employee_shortName'>
-                <p>{nameShort.join('')}</p>
+            <div className='wrapperDashboard__nav_nameLogout'>
+              <div className='wrapperDashboard__nav_nameLogout_employee'>
+              <div className='wrapperDashboard__nav_nameLogout_employee_shortName'>
+                <p>{employeeName.charAt(0)}</p>
               </div>
-              <div className='wrapperDashboard__nav_employee_fullNamePossition'>
-                <p className='wrapperDashboard__nav_employee_fullNamePossition_name'>{employee}</p>
-                <p className='wrapperDashboard__nav_employee_fullNamePossition_position'>{role}</p>
+              <div className='wrapperDashboard__nav_nameLogout_employee_fullNamePossition'>
+                <p className='wrapperDashboard__nav_nameLogout_employee_fullNamePossition_name'>{employeeName}</p>
+                <p className='wrapperDashboard__nav_nameLogout_employee_fullNamePossition_position'>{role}</p>
               </div>
+            </div>
+
+            <button
+              className='wrapperDashboard__nav_nameLogout_logout'
+              onClick={() => logout()}
+            >Log Out</button>
+
             </div>
           </div>
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import './Schedule.css'
 
 const Schedule = () => {
   return (
-    <div>Schedule</div>
+    <div className='scheduleWrapper'>
+      <h1 className='blockTitle'>Schedule</h1>
+    </div>
   )
 }
 

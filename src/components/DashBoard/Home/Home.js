@@ -26,16 +26,54 @@ const Home = () => {
     weekday: 'long'
   })
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if(user){
+        try{
+          const copyDataBase = doc(db, 'users', user.uid)
+          const parseInData = await getDoc(copyDataBase)
+
+          if(parseInData.exists()){
+            const userData = parseInData.data()
+
+            if(userData.name){
+              setName(userData.name)
+            }else{
+              setName('User')
+            }
+
+            if(userData.email){
+              setEmployeeEmail(userData.email)
+            }
+          }else{
+            console.log('Данных не обнаружено')
+          }
+        }catch(error){
+          console.log(error.message)
+        }
+      }
+    })
+
+    return () => unsubscribe()
+  }, [])
+
   const saveTicket = async () => {
     try{
       await addDoc(collection(db, 'tickets'), {
         leadEmail: leadEmail,
         ticketStatus: ticketStatus,
-        leadQuestion: leadQuestion
+        leadQuestion: leadQuestion,
+        resolveQuestion: resolveQuestion,
+        reasonHold: reasonHold
       })
     }catch(error){
       console.log(error.message)
     }
+    setLeadEmail('')
+    setTicketStatus('')
+    setLeadQuestion('')
+    setResolveQuestion('')
+    setReasonHold('')
   }
 
   return (

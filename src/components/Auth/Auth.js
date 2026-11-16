@@ -4,6 +4,7 @@ import logo from '../../img/synca-icon.svg'
 import mail from '../../img/mail.svg'
 import lock from '../../img/lock.svg'
 import eye from '../../img/eye.svg'
+import check from '../../img/check.svg'
 import { useNavigate } from 'react-router-dom'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth, db } from '../../firebase'
@@ -25,6 +26,7 @@ const Auth = () => {
   const [visiblePass, setVisiblePass] = useState(false)
   const [visibleConfirmPass, setVisibleConfirmPass] = useState(false)
 
+  const [modal, setModal] = useState(false)
 
   const navigate = useNavigate();
 
@@ -49,8 +51,7 @@ const Auth = () => {
     setUserEmail('')
     setUserPassword('')
     setUserConfirmPassword('')
-    setStep('login')
-    alert('Аккаунт успешно создан')
+    setModal(true)
   }
 
   return (
@@ -222,8 +223,26 @@ const Auth = () => {
           </p>
         </>
       ) : null}
-
+{       modal === true ? (
+          <div className='modal'>
+            <div className='modal__block'>
+              <div className='modal__block_circle'>
+                <img src={check}/>
+              </div>
+              <div className='modal__block_textBlock'>
+                <h1>Account created!</h1>
+                <p className='modal__block_textBlock_firstLineText'>Your <span>Synca</span> account has been successfully created.</p>
+                <p className='modal__block_textBlock_secondLineText'>You can now sign in with your email and password.</p>
+              </div>
+              <button onClick={() => {
+                setStep('login')
+                setModal(false)
+              }}>Go to Sign In</button>
+            </div>
+          </div>
+        ) : null}
     </div>
+    
   )
 }
 

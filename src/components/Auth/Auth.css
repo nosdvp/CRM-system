@@ -10,6 +10,7 @@
   justify-content: space-between;
   flex-direction: column;
   box-shadow: 0px 0px 100px rgba(251, 145, 59, 0.137254902);
+  position: relative;
 }
 .authWrapper__title {
   width: 100%;
@@ -176,6 +177,81 @@
 }
 .authWrapper__visiblePass:active {
   transform: scale(0.95);
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #020202;
+}
+.modal__block {
+  width: 400px;
+  height: 450px;
+  background-color: #19191d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 45px 30px;
+  border-radius: 20px;
+  border: 2px solid #32323a;
+}
+.modal__block_circle {
+  width: 100px;
+  height: 100px;
+  background-color: #1a3036;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #1d717f;
+}
+.modal__block_circle img {
+  width: 80px;
+  height: 80px;
+}
+.modal__block_textBlock {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.modal__block_textBlock h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+.modal__block_textBlock p {
+  color: #8e8e97;
+  text-align: center;
+}
+.modal__block button {
+  width: 100%;
+  height: 50px;
+  background-color: #F97316;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: inset 0px 0px 5px white;
+}
+.modal__block button:hover {
+  transform: scale(1.02);
+  transition: all 0.1s;
+}
+.modal__block button:active {
+  transform: scale(0.98);
+  transition: all 0.1s;
 }
 
 @media (max-width: 455px) {

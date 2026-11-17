@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, use } from 'react'
 import './Home.css'
 import play from '../../../img/play.svg'
 import { auth, db } from '../../../firebase'
-import { doc, getDoc, setDoc, collection, addDoc } from 'firebase/firestore'
+import { doc, getDoc, collection, addDoc } from 'firebase/firestore'
 import { onAuthStateChanged } from 'firebase/auth'
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
   })
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async(user) => {
       if(user){
         try{
           const copyDataBase = doc(db, 'users', user.uid)
@@ -54,7 +54,7 @@ const Home = () => {
       }
     })
 
-    return () => unsubscribe()
+    return() => unsubscribe()
   }, [])
 
   const saveTicket = async () => {
